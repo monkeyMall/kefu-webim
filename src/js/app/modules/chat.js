@@ -910,6 +910,9 @@
 			bindEvents: function () {
 				var me = this;
 
+				// 防止异步引起的问题
+				config.grayList = {};
+
 				if (!utils.isTop) {
 					// 最小化按钮
 					utils.on(document.querySelector('.em-widgetHeader-min'), 'click', function () {
