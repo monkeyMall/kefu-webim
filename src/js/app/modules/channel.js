@@ -302,7 +302,8 @@ function _handleMessage(msg, options){
 	var isHistory = opt.isHistory;
 	var eventName = utils.getDataByPath(msg, "ext.weichat.event.eventName");
 	var eventObj = utils.getDataByPath(msg, "ext.weichat.event.eventObj");
-	var msgId = utils.getDataByPath(msg, "ext.weichat.msgId");
+	// 为了保证可以取到自己发出的消息的ID，此为临时修改，在完成 messageBuilder 之后应该就可以去掉了
+	var msgId = (msg && msg.id) || utils.getDataByPath(msg, "ext.weichat.msgId");
 
 	var isReceived = typeof opt.isReceived === "boolean"
 		? opt.isReceived
@@ -557,7 +558,7 @@ function _handleMessage(msg, options){
 	) return;
 
 	// 给收到的消息加id，用于撤回消息
-	message.id = msgId;
+	message.id = message.id || msgId;
 
 	// 消息上屏
 	_appendMsg(message, {
