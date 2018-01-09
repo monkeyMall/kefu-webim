@@ -1,7 +1,7 @@
 
 echo git tag: $TRAVIS_TAG
-echo username : env.username
-echo password: env.password
+echo username : username
+echo password: password
 
 if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
 
@@ -21,9 +21,10 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
 
         deploy:
             provider: releases
-            user: env.username
-            password: env.password
+            user: username
+            password: password
             file: "FILE TO UPLOAD"
+            # 将文件部署到提供者时，阻止Travis CI重置您的工作目录并删除build（git stash --all）期间所做的所有更改
             skip_cleanup: true
             on:
                 tags: true

@@ -16,3 +16,12 @@ script:
    
 # 定于一些环境变量，这些会通过export的方式供当前shell引用
 # env:
+deploy:
+ provider: releases
+ username: username
+ password: password
+#  file: "FILE TO UPLOAD"
+ # 将文件部署到提供者时，阻止Travis CI重置您的工作目录并删除build（git stash --all）期间所做的所有更改
+ skip_cleanup: true
+  on:
+   tags: true
