@@ -18,9 +18,6 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         npm install
         npm run build -- --tag-name=$TRAVIS_TAG
 
-
-        
-
      else
         echo ''
         echo 'The format of the tag is not correct.'
