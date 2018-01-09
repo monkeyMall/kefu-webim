@@ -19,7 +19,7 @@ script:
 deploy:
   provider: releases
   skip_cleanup: true
-  user: $username
+  user: $user
   password: $password
   on:
     tags: true
