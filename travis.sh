@@ -19,15 +19,7 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         npm run build -- --tag-name=$TRAVIS_TAG
 
 
-        deploy:
-            provider: releases
-            user: username
-            password: password
-            file: "FILE TO UPLOAD"
-            # 将文件部署到提供者时，阻止Travis CI重置您的工作目录并删除build（git stash --all）期间所做的所有更改
-            skip_cleanup: true
-            on:
-                tags: true
+        
 
      else
         echo ''
