@@ -25,8 +25,8 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
             password: env.password
             file: "FILE TO UPLOAD"
             skip_cleanup: true
-        on:
-            tags: true
+            on:
+                tags: true
 
      else
         echo ''
