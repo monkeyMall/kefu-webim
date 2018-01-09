@@ -18,9 +18,8 @@ script:
 # env:
 deploy:
   provider: releases
-  user: username
-  password: password
-  # file: "FILE TO UPLOAD"
   skip_cleanup: true
+  user: $username
+  password: $password
   on:
     tags: true

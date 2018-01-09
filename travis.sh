@@ -1,7 +1,7 @@
 
 echo git tag: $TRAVIS_TAG
-echo username : username
-echo password: password
+echo username : $username
+echo password: $password
 
 if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
 
