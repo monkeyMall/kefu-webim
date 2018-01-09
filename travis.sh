@@ -5,7 +5,7 @@ echo password: env.password
 
 if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
 
-    if [ `echo $TRAVIS_TAG | grep "^plugin_[0-9]\+\.[0-9]\+\.[0-9]\+_final$"` ]; then
+    if [ `echo $TRAVIS_TAG | grep "^plugin_[0-9]\+\.[0-9]\+\.[0-9]\+$"` ]; then
         
         # nexus
         echo ''
@@ -17,6 +17,16 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         cd ../
         npm install
         npm run build -- --tag-name=$TRAVIS_TAG
+
+
+        deploy:
+            provider: releases
+            user: env.username
+            password: env.password
+            file: "FILE TO UPLOAD"
+            skip_cleanup: true
+        on:
+            tags: true
 
      else
         echo ''
