@@ -5,7 +5,6 @@ script:
 - chmod 755 ./travis.sh
 - "./travis.sh"
 deploy:
-  "if [ `echo $TRAVIS_TAG | grep "^plugin_[0-9]\+\.[0-9]\+\.[0-9]\+$"` ]; then"
   provider: releases
   user: $user
   password: $password
@@ -16,4 +15,3 @@ deploy:
   on:
     repo: monkeyMall/kefu-webim
     tags: true
-  "fi"
