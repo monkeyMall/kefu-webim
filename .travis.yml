@@ -8,8 +8,7 @@ deploy:
   provider: releases
   file: "*.tar.gz"
   skip_cleanup: true
-  api_key:
-    secure: Qt7+Ilo/h24K8HgW5K25dOEpfM0yL46995ZwwlCWRYhTvuTVyVHLYPG5jeKt2TFOLcnth56pawaWNCNW/BInQANB2zJP0yKLcNULtcaKIuS6goEJ1D81iObx6uTjxU7YnbnVwDMxRtppxvsk2X/eU3YN7YLBW7gC0W7ytS+wEnFRlioRm0t7lnxdcMBOgUCfwiQvMGNWj3LW08qNrzljwNhNBsPHEOgCwJm5AYc0+7Ny84i0Up6yZCyN1qXMHB9/qXco1/xjAcUBF9VKOrFa/A7ZswK72czev0Icy34u00wB+vZuaoxiAtVy2LpMvwVZjUc0ut3hFCkyEcNDdsVsl4h6gAhBP0J+lmq0vT6fL2ipAGXXyD+d9HWFMhz/8823WsBfm8zyxWHlAZow5qzSkWQwkOF8LaDHvPkAdohoPEdFrQDvBg1bNHehPvGbsbm5pLiuFgMPp80EHAF13yww4lsgdhIf6MmDFsZDzzxuw99FmhWlHLFL3tZ/l+x0MVa1J/Bkwi/TL9OWiD/7bAqgJbpNHPSjIC5zzgvruRFyMkVKjNrGIY2WMqNlzwhWQyjMEQwQH24h54UoT9bqYswE2RS8zTv/Uq8DU7dTcNQvoICVMR3SttccXZ3cD6Q03pfXGG1yunrSlrr1kFkD/lT4EcvnIX/LVH2UUecCQknn2WU=
+  api_key: "78522f61f358dc6b41726a35543d0f42d05dfa01"
   on:
     repo: monkeyMall/kefu-webim
     tags: true
