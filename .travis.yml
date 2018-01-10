@@ -1,26 +1,15 @@
-# 因为使用的hexo是通过npm安装的，这就要求nodejs环境
 language: node_js
-# 防止低版本会报错
 node_js: stable
-
-# before_install:
-  # on:
-  #  tags:true
-install : true
-# 指定构建时的shell命令
+install: true
 script:
- - chmod 755 ./travis.sh
- - ./travis.sh
-# 指定构建步骤成功后的执行动作
-# after_success:
-  
-# 定于一些环境变量，这些会通过export的方式供当前shell引用
-# env:
-# deploy:
-#   provider: releases
-#   user: $user
-#   password: $password
-#   # 确保你已经skip_cleanup设置好了true，否则Travis CI会删除在构建期间创建的所有文件，这可能会删除你正在尝试上传的文件。
-#   skip_cleanup: true
-#   on:
-#     tags: true
+- chmod 755 ./travis.sh
+- "./travis.sh"
+deploy:
+  provider: releases
+  api_key:
+    secure: jZknOSyxex1wy6aDsWYmdZKY/mFA2orE+tuHfGAgXmbNBtgW0T3vQ78yIkJWekkLy6LeDGpTkaOmLQ39TSaGh62JI0Ycp+tnidM00N7QobygR2ciGPL+PosKE67I/zIuI/VY1ILoAOGQUapdhBPiPJji57HyyC0cxwmKMKgJCZabqUhyFp0StGmLFpW0Eq8GzqvqSpzTIrDOZFzROBUEuMKtKMeofzVsnHjEAa71yYa71qQ4pGtIG1CAgt3BzdQhBKR6r8L+B7b/1z2fOvv4XkJvpkY/jYA9PI4c23Lu8pQfSs9wPbx6BkpisUH4IVNaSpCGfLZgcZyhIbu4rm9+YshIUdJwEnTsJ3TELE8c1h9aoEdYgrnkQNVbex0YAPZ+mkU6PXqPcDYOHLBTcYTNoP4rzO8YJbhb/6MwmMogn1vjeDZsyQqaejgN3YCGO5ZMkrDmWS3z68tX0SLZFnv3lDpE0FbbPw3BaF39aLqsybqR1S3BrqZylmtvfSk08hR24JJGsPNcv5+Afte++xQH1gbVqLadnSUq/2zAq+DyWwzm8MX2N2+vEREXO3VQWToRY0GFDxSlZFECgzdprCgrB36UQ0i0oZ3UfZ+n7r3h+lVTTTRQ9upr66En6iMtVS21WVOZJpnSvjhdVbUMNtFHk5medVHTXijQIVuA7aFjOJs=
+  file: "*.tar.gz"
+  skip_cleanup: true
+  on:
+    repo: easemob/kefu-webim
+    tags: true
