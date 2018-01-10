@@ -16,10 +16,11 @@ script:
   
 # 定于一些环境变量，这些会通过export的方式供当前shell引用
 # env:
-deploy:
-  provider: releases
-  skip_cleanup: true
-  user: $user
-  password: $password
-  on:
-    tags: true
+# deploy:
+#   provider: releases
+#   user: $user
+#   password: $password
+#   # 确保你已经skip_cleanup设置好了true，否则Travis CI会删除在构建期间创建的所有文件，这可能会删除你正在尝试上传的文件。
+#   skip_cleanup: true
+#   on:
+#     tags: true
