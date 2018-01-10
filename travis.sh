@@ -1,7 +1,6 @@
 
 echo git tag: $TRAVIS_TAG
-echo username : $user
-echo password: $password
+echo $secretvalue.GITHUB_OAUTH
 
 if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
 
