@@ -1,6 +1,6 @@
 
 echo git tag: $TRAVIS_TAG
-echo $secretvalue
+echo github:$GITHUB_OAUT
 
 if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
 
