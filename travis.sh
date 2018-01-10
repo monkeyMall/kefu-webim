@@ -1,6 +1,6 @@
 
 echo git tag: $TRAVIS_TAG
-echo github:$GITHUB_OAUT
+echo github:$GITHUB_OAUTH
 
 if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
 
