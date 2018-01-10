@@ -10,7 +10,7 @@ deploy:
   skip_cleanup: true
   # user: $user
   # password: $password
-  api_key: "369cafb62fe4a10b99e2aa747ec3e2133dee30d2"
+  api_key: "17508a7c161995c1f7786e6d3ed486eaeead38e2"
   on:
     repo: monkeyMall/kefu-webim
     tags: true
