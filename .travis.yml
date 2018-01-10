@@ -8,9 +8,9 @@ deploy:
   provider: releases
   file: "*.tar.gz"
   skip_cleanup: true
-  user: $user
-  password: $password
-  api_key: "78522f61f358dc6b41726a35543d0f42d05dfa01"
+  # user: $user
+  # password: $password
+  api_key: "369cafb62fe4a10b99e2aa747ec3e2133dee30d2"
   on:
     repo: monkeyMall/kefu-webim
     tags: true
