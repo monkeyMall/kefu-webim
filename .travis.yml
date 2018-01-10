@@ -11,5 +11,5 @@ deploy:
   file: "*.tar.gz"
   skip_cleanup: true
   on:
-    repo: easemob/kefu-webim
+    repo: monkeyMall/kefu-webim
     tags: true
