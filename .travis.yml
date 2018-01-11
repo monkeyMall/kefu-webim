@@ -4,14 +4,13 @@ install: true
 script:
 - chmod 755 ./travis.sh
 - "./travis.sh"
+before_deploy: cp $TRAVIS_BUILD_DIR/build/libs/ARTIFACT_ID*.jar ARTIFACT_ID.jar
 deploy:
   provider: releases
   skip_cleanup: true
-  user: $user
-  password: $password
+  file: ARTIFACT_ID.jar
   on:
     repo: monkeyMall/kefu-webim
     tags: true
-env:
-  global:
-    secure: Bhdi46NRkezEP6V+QjhVv0/N3FQypaM/Mat5GQEnZy38d/N4OLXPWwREY/9nw0c2qVQJ+Xj4mqvktnafZpZTzRLmH5tlK8AO2zR02pux4O/Wq402RP3rcrGPRiCgjVsOvfLDJKTZANiQYJX1wChGUyM1O5nmaiset7BhRwbxTPZcC8WYRo8XGGdldxODJOK/Ac0Bd1QE0HgxVuB6SLT1DfucDkUTP65H7NCfq+OzuoEAQVka+gcQoSydiR+sjRHFTSYilZxU40idLa+kBB+921BkfDDLBA1yl8Mmy0jnmA08CFmO0735AW2gQP1A03kuSnNLR/EfnwbB1G37zw2CJvXO41cevmm2J6zBbiqIualvUaGMVU2wosVuqD/7CCzyllfLVTMZb1E9mGjffGQwxYlwjGCHn44kVck52N8XU1/wnIKk/V+P7LyVhP8p1seSATP13fFdnIDo00z/GojvEpS+6E1WESPe15tLVOwthnuwMj8eUrJfhWQ2qOsJqRAOkESa5mfaTpX9RHjZBybUgCMel4S+uz+iQ7LVlZXhHEhkdpvCgsSBLJQNISjtdfqgp1EZmfZRE6HPQRfGdSDz0+oLKJBaRglIrUYTQJPnNS/WkHi5NAiEhql1ru0w7xxCuNqBrLjJGSES+NJy2Tzyi/zHZeJggZWxOMFmUgsRgiQ=
+  api_key:
+    secure: uG3Pj0rCtlpgZrIUE7MNYs+TlOO1W+XzetwOeoXwyRieafdXyN0bN++1ktH0G68qtuwcIm1+UN3KBJSZD8Hfe/hQf4PWNG+C4rs5KvWOxwbhni6fdj3anUt2XcLvPCtWdlWyFmiUdir02F+/dJQy5dSX3uD3AuDE2ibNwWKn5W+YgCf565rVZURfbvfg57eYMGWCHU84UoECZELgwFvrJcPp6vBWdbDM5IdduXv/h7GSk3I4i7K1sJQilEzHAoKQXKN8Qi3LFqBOrlD//FtuIQmdS0nRrmpdGanCctvi50v+9MMk+y6TqrCTazebHSx+k/cHOn5X1O22PRvBXfNYm/X6SIm1MpdhljGJryLsGIc1W+ViqF2c4tFKIO+StkqMY0iyDwZ74W0VWX2Oq0alHnfXd0T8bAdr7d67J7hp+xl5vx7lQiqBwg7kGLvebSWNsSXv+Ql5yLt3971FY1CvJT89RUikT6O6F4fUGCeonrZVG+btKbHwrZM1+ECkmhHCY9CHXk0wF8qUGP2tIX0Y3IcqMy2QXnMfqmcs1laF7QlgCcFJjl6KCMucD1vH9VyQE/jsO5zJrgehpxfcypxuHgpezbO2vjhw4ytatVcTBs9E7yYecB5Y4JCYBQK28RO9mFtRq5SPrItuEeAOjj7o/eppMQU4bEKr6VjOxzfT7Xw=
