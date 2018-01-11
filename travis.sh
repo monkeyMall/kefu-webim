@@ -9,7 +9,6 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         echo ''
         echo '[is a tag] start packing'
         npm config set registry https://registry.npm.taobao.org
-        cd kefu-webim
         cd server
         npm install
         cd ../
