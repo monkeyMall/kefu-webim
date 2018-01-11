@@ -17,14 +17,12 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         echo ''
         echo "build result" 
         pwd
-        ls
-        cat webpack.config.js     
+        ls    
         cd ../
-        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/appPageCached.js   
-        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/node_modules  
+        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/appPageCached.js kefu-webim
+        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/node_modules kefu-webim
         echo ''
         echo "tar result" 
-        cd ../
         ls
 
      else
