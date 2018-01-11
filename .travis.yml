@@ -7,7 +7,7 @@ script:
 deploy:
   provider: releases
   api_key: ${github_oauth}
-  file: $TRAVIS_BUILD_DIR/kefu-webim.tar.gz
+  file: $TRAVIS_BUILD_DIR/../kefu-webim.tar.gz
   skip_cleanup: true
   on:
     all_branches: true
