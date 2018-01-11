@@ -7,7 +7,8 @@ script:
 deploy:
   provider: releases
   skip_cleanup: true
-  
+  user: $user
+  password: $password
   on:
     repo: monkeyMall/kefu-webim
     tags: true
