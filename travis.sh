@@ -14,8 +14,18 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         cd ../
         npm install
         npm run build -- --tag-name=$TRAVIS_TAG
+        echo ''
+        echo "build result" 
         pwd
-        ls        
+        ls
+        cat webpack.config.js     
+        cd ../
+        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/appPageCached.js   
+        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/node_modules  
+        echo ''
+        echo "tar result" 
+        cd ../
+        ls
 
      else
         echo ''
