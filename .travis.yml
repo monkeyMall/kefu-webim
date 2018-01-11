@@ -17,7 +17,8 @@ jobs:
       script: echo "Deploying to GitHub releases ..."
       deploy:
         provider: releases
-        api_key: $GITHUB_OAUTH
+        api_key: 
+          secure: 2D4KfBNWEOTpHqfFOZvyHYH+4U34pbuz8GsMBUmRr/nNN1QyZQ//ppebQdQ/z9/3X5t4vcKDREikZGYeT3d0Bg3n5R2YZNHtCI8asaTsPtIHiYYAbMvhGTZUvHsGxhdqpXGdEWou50IIUEh2t+Z/YaQ8vS6Bh4/wpAX/xvDSWTwSCifa1t+K2q/LqyOi7kpoG0FgHj1dIsoWpXvXTTqc90EC9rLIvs1xITSde/dDKrHDU6qapI5JmPR3oFgaGN5xlF1gLTjwlql+ktnxAK5DVuWawSxGj4c8XtBNP6S0yAm9FRd1UMIweR01q6zMyUWjWEqT+rHbF2ejgN4KhwrSLotXDgpbbAHaDpmqNBtk8NO4yOgkKh70ntDd0O9NUUTIsA3dBoZq0bq6FavoZ4c3LM0jvuJi0dmBaiaqa6sVO9esZM+ZM8eYywUPvzYkZwNArdrLfM5s0j7YUMPVNVmlmcp7MFR9ZVJluJ2UtcyRp6hqaoEh1W7lvUepqwCr4tGhO1WL2O4XZWTi2ywkRR1PwZVdNpyskNvz0noVGUeGaRjgZ7oXGqMqzTpsxtqjd6FjGf+/5t3BL09UozMW2dse/gc0gNILlpJsmYdarnjSrwLeIaxR/nr7fQd9jrCGLGPDVSJX0T2yMVeOSgYt2IHdz9FczY4dSqZH8+a8g+wJYPA=
         skip_cleanup: true
         on:
           tags: true
