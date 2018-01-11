@@ -7,7 +7,7 @@ script:
 deploy:
   provider: releases
   skip_cleanup: true
-  github_token: $GITHUB_OAUTH
+  github_token: "$GITHUB_OAUTH"
   on:
     repo: monkeyMall/kefu-webim
     tags: true
