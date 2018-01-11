@@ -6,8 +6,7 @@ script:
 - "./travis.sh"
 deploy:
   provider: releases
-  api_key:
-    secure: "h3BDlOTUa/UZx2wKQxHwcEZQEgVdt/U3ee1KJMhoJR+UCGCKup1XQBVFMOqNwpP7HX6vFGsdkGt29rxoMe6RQAuw+gO+u+SDn9uELHrRm6RnVV2XChcMi11noTMzJ2k34f3yWaBHLNv+eVXJmtgm2Fm9RpnWhDlsdzn19gf5A/UX2oRdw+3SQ4gpmG+R1JiF++JomWFaz33bqXGq58T+tLXJmtJMM5BOr+EnD3REaPO//eFNbeYTK3mkA1NBJGgjOXWm9ybpwCtmFE3xT2EIsi6AuSmpqvsJ8uPvRMAf+O8DKYhRTfLHcL3RgJ3WA1SgFQyN1K8+SObL/ultbRiweE0rN7jPyFYxj/YOYg60mK644V+KmGjRg/X7YMQDj0Wm7UVTgSe8JVxejbgjgQtsyXHFRsX3PYyWEOA5K8PMvNhv2fAxmgxgxmobuYrgNXc7gcjlTZsFe2VHb3jOwrMWSk9QbQKD9Vbb2xRvU4iJ5UAGnzRFmbPhLAWnMNMoGCCys0fZtgaAyyxdTXKh1rOrUP+/xj4HDkY5r2d1WdBlveZcPPI7mE9ultOmLlrI/qRGCFz+8Tv2ozt+axJYar1v4x1qGpEnc5E5ovl+OHaTSdU274+/Neov3PnBka9Pp6sg4WG+lmHMHE45AP7drPvBCgyLttQYGwTjIZQTUE0+sao="
+  api_key: ${github_oauth}
   file: "*.tar.gz"
   on:
     all_branches: true
