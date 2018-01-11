@@ -19,8 +19,7 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         pwd
         ls    
         cd ../
-        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/appPageCached.js kefu-webim
-        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/node_modules kefu-webim
+        tar -zcvf kefu-webim.tar.gz --exclude=kefu-webim/appPageCached.js --exclude=kefu-webim/node_modules kefu-webim
         echo ''
         echo "tar result" 
         ls
