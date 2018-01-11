@@ -7,7 +7,7 @@ script:
 deploy:
   provider: releases
   api_key: ${github_oauth}
-  file: $TRAVIS_BUILD_DIR/target
+  # file: $TRAVIS_BUILD_DIR
   skip_cleanup: true
   on:
     all_branches: true

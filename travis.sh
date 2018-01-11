@@ -14,6 +14,8 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         cd ../
         npm install
         npm run build -- --tag-name=$TRAVIS_TAG
+        pwd
+        ls        
 
      else
         echo ''
