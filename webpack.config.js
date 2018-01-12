@@ -15,7 +15,7 @@ const _en_us_map_ = require("./src/i18n/en-US");
 // const VERSION = "pre_47.15.0";
 
 const argv = require("yargs").argv;
-const VERSION = argv[tag-name]
+const VERSION = argv["tag-name"]
 const lang = argv.lang || "zh-CN";
 
 var distPath = lang === "zh-CN" ? "" : lang;

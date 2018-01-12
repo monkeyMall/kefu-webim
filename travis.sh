@@ -22,7 +22,7 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         echo "webpack"
         cat webpack.config.js | head -n 20
         cd ../
-        tar -zcv kefu-webim-${TRAVIS_TAG}.zip --exclude=kefu-webim/appPageCached.js --exclude=kefu-webim/node_modules kefu-webim
+        zip -q -r kefu-webim-${TRAVIS_TAG}.zip --exclude=kefu-webim/appPageCached.js --exclude=kefu-webim/node_modules ./kefu-webim
         echo ''
         echo "tar result" 
         ls
