@@ -6,9 +6,13 @@ script:
 - "./travis.sh"
 deploy:
   provider: releases
-  api_key: ${github_oauth}
-  file: $TRAVIS_BUILD_DIR/../kefu-webim.tar.gz
+  api_key: "${github_oauth}"
+  file: "$TRAVIS_BUILD_DIR/../kefu-webim.tar.gz"
   skip_cleanup: true
   on:
     all_branches: true
-    tag: true
+    condition: '`echo $TRAVIS_TAG | grep "^plugin_[0-9]\+\.[0-9]\+\.[0-9]\+_final$"`'
+env:
+  global:
+  - secure: lo9EhCZr70L63hrbpCf/UC13lmOb1yIJ1b8tJL/UPSR/9JRZXfp+eIpdLQRMJDYI4XccYSvpMpcez8cvVqflUl2JxP33cdEAPdx2bPhJ+2J7h6pf4u400g9IJznMORqjk208CxL1fmdQM1G0vIbys83k3Q5C6SKjttv+/6pMEA/JFBfhjp9eddSQcMcUdmvl1bP4rMqes1CHRFnD2cTqhGi/y4LC3ZlymadyHrXUTXlf/y0TBILvL0hV0EHxlozLHt7cx9S6h045Ca3mvVJ1tS4TZNEGMqrLlqfvT8OJEF4oKhC3UghlcyuIZ0nxtl3k9lu+ndtNUID91rYCdDl0c6R54vm4Ep/R4DrtlDsLDgYIpgbvncAO8oPn/M+W3tn1MwfxgxDwrccPBzS6AUEUFnmlBvanKGoMvhb8dLCHBBTF0Ki/eKb5t7mfDayQTD74CP97GIDUcJm8zWNDzd+e64Mpxjtjrh5dnsWGq3HejYFaIsPjU/JdKkjuuv4lrIttctY7VsrJYp6rrPjl0GIuZap3HKs6MzDTlT7G5r/zVAXXuL0lmt3Yr9B/Bb/dLTzvBFHAQyQ+X0BUGI2MH+ioMoU41n4RUvorvXP15vmo+grcBNlCMZxzPTlcd8mXuFdsQxL04aMx16lhP1qlTKBvXeh2IUtPDv7apoUWNul33B0=
+  - secure: zq9GqsfQ88r3YH2APsxLrXUkTeoba7PsEVkzxc6LbyhCteQcsn8HAnyMDoqoceLkz3/KHVVyw0N4A028Cz24LPG9vQh/BRaEJBCz2TuX/HdqU/9wkp03NX3n2wKfmBFOqD2KVBce5XUBzs2dj4GKuQy5zubpGqrAdCJB6MDO0EqnGxLbSNOKLP3uhMz0zTbFL9QrGyTEkqysC1bzFZTrIsGs0kn12LWjFbuj7zXh7rGxRl8/9FeQBZFZ0y5XIue70K3Ad//kkkCZfNnErr3aHgRZ6cJH1gBfRHempjABjN/cgzD8v55OZmuY/mmKFCBPKIJQ95HpVtyAhdIzKHJ4lwfaiWUa0HcpUqi4SYyHwHoAfyLKa0n/LZ7uf65h9ItMhjuc8FveZY4jDv7D7GD7uby0xz9VNxe8fbPP+shKyhapDKiHrhrNF2dkksTn62cxMj/K+KXC0WI95bDbml42m7CzPnrl3DKcfb25Hg5qMjL94mMb8idpu7BHu8m1NNMj0qoNyVFvINhasSPvIxYk1dRvYXfnrri+dbsRhF+CsTwNpxUqydtw2rfNt/BzyJflfUoFkDWkqeXXJSM1M4mtPeAn7n10zLcpY1fXEEXCM0bApr9qZCjuMM+yTF4R6Yv3aD5+bZr93WF+Q5Q9EywCMaxA9NZh8oc1ndyZ7THTVuU=
