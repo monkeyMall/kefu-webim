@@ -1,7 +1,7 @@
 
 echo git tag: $TRAVIS_TAG
 echo nexus_user: ${nexus_user}
-echo nuxes_password: ${nuxes_password}
+echo nexus_password: ${nexus_password}
 
 if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
 
@@ -14,36 +14,19 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         
         npm install
         npm run build -- --tag-name=$TRAVIS_TAG
-        echo ''
-        echo "build result" 
-        pwd
-        ls    
-        echo ""
-        echo "webpack"
-        cat webpack.config.js | head -n 20
         cd ../
-        zip -q -r kefu-webim-${TRAVIS_TAG}.zip --exclude=kefu-webim/appPageCached.js --exclude=kefu-webim/node_modules ./kefu-webim
-        echo ''
-        echo "tar result" 
-        ls
+        zip -q -r kefu-webim-${TRAVIS_TAG}.zip  --exclude=kefu-webim/node_modules ./kefu-webim
 
-        # mode="final"
-        # package= "com.easemob.robot.webim.production" | "com.easemob.robot.webim.development"
-        # repo="robot-ui-webim"
-        # ver="robot_webim_1.2.3.final" | "robot_webim_1.2.3.snapshot"
-        # target= @${TRAVIS_BUILD_DIR}/../kefu-webim.tar.gz
-        # "curl -v " +
-        # "-F r=${mode} " +
-        # "-F hasPom=false " +
-        # "-F e=zip " +
-        # "-F g=${package} " +
-        # "-F a=${repo} " +
-        # "-F v=${ver} " +
-        # "-F p=zip " +
-        # "-F file=@${target} " +
-        # "-u" +${server_name}+":"+${server_password}+" http://hk.nexus.op.easemob.com/nexus/service/local/artifact/maven/content\n";
+        if [ `echo $TRAVIS_TAG | grep "^plugin_[0-9]\+\.[0-9]\+\.[0-9]\+_final$"` ];then
 
+            curl -v -F r=releases -F hasPom=false -F e=zip -F g=com.easemob.kefu.webim.product -F a=kefu-webim -F v=${TRAVIS_TAG} -F p=zip -F file=@${TRAVIS_BUILD_DIR}/../kefu-webim-${TRAVIS_TAG}.zip -u ${nexus_user}:${nexus_password} https://hk.nexus.op.easemob.com/nexus/service/local/artifact/maven/content
+        
+        else
+            
+            curl -v -F r=releases -F hasPom=false -F e=zip -F g=com.easemob.kefu.webim.development -F a=kefu-webim -F v=${TRAVIS_TAG} -F p=zip -F file=@${TRAVIS_BUILD_DIR}/../kefu-webim-${TRAVIS_TAG}.zip -u ${nexus_user}:${nexus_password} https://hk.nexus.op.easemob.com/nexus/service/local/artifact/maven/content            
 
+        fi
+     
      else
 
         echo ''
