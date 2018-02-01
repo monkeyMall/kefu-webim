@@ -15,7 +15,7 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
         npm install
         npm run build -- --tag-name=$TRAVIS_TAG
         cd ../
-        zip -q -r kefu-webim-${TRAVIS_TAG}.zip  -x="node_modules" ./kefu-webim
+        zip -q -r kefu-webim-${TRAVIS_TAG}.zip kefu-webim -x "kefu-webim/node_modules/*" -x kefu-webim/appPageCached.js 
 
         if [ `echo $TRAVIS_TAG | grep "^plugin_[0-9]\+\.[0-9]\+\.[0-9]\+_final$"` ];then
 
